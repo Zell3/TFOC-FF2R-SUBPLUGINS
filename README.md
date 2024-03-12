@@ -3,9 +3,9 @@
 TFOC FF2R Sub-plugins by Zell (TFOC Inner Circles)
 
 ## Usage
-copy from "all configs abilities.cfg" that's up-to-date
+Everything in "all configs abilities.cfg" are work fine and up-to-date.
 
-about files in plugins and scripting some of them are not working
+Some files in folder plugins and scripting are not working. You can check it by looking in "all configs abilities.cfg"
 
 ## Contributing
 
