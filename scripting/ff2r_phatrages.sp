@@ -854,10 +854,14 @@ public void Rage_IonCannon(int clientIdx, const char[] ability, AbilityData cfg)
 	IOCdamage = cfg.GetInt("damage");
 	aimmode = cfg.GetBool("aimmode");
 
-	rgba[0] = cfg.GetInt("red", 0);
-	rgba[1] = cfg.GetInt("green", 150);
-	rgba[2] = cfg.GetInt("blue", 255);
-	rgba[3] = cfg.GetInt("alpha", 255);
+	char buffer[4][4];
+	char color[256];
+	cfg.GetString("rgba", color, sizeof(color), "0 150 255 255");
+	ExplodeString(color, " ", buffer, sizeof(buffer), sizeof(buffer));
+	rgba[0] = StringToInt(buffer[0]);
+	rgba[1] = StringToInt(buffer[1]);
+	rgba[2] = StringToInt(buffer[2]);
+	rgba[3] = StringToInt(buffer[3]);
 	
 	distance = distance * 29;
 	
