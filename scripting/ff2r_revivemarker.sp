@@ -47,8 +47,6 @@ public Plugin myinfo = {
 };
 
 public void OnPluginStart() {
-	HookEvent("player_spawn", Event_OnPlayerSpawn, EventHookMode_Pre);
-	HookEvent("player_death", Event_OnPlayerDeath, EventHookMode_PostNoCopy);
 	MarkerEnable = false;
 
 	PrecacheSound(MVMINTRO, true);
@@ -114,6 +112,8 @@ public void FF2R_OnBossCreated(int client, BossData cfg, bool setup) {
 		AbilityData ability = cfg.GetAbility("special_revivemarker");
 		if (ability.IsMyPlugin()) {
 			MarkerEnable = true;
+			HookEvent("player_spawn", Event_OnPlayerSpawn, EventHookMode_Pre);
+			HookEvent("player_death", Event_OnPlayerDeath, EventHookMode_PostNoCopy);
 			HookEvent("player_changeclass", Event_ChangeClass);
 			HookEvent("post_inventory_application", Event_PlayerInventory, EventHookMode_Pre);
 
